@@ -6,6 +6,14 @@ package com.yitian.sort;
  * @description：归并排序
  * @modified By：
  * @version: $
+ *
+ * 基本思想
+ * 归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，
+ *              每个子序列是有序的。
+ *              然后再把有序子序列合并为整体有序序列。
+ * 分解：将含有n个元素的待排序列分解为各含n/2个元素的两个子序列。
+ * 解决：用归并排序递归地排序两个子序列。
+ * 合并：合并两个已排序的子序列，以得到最终结果。
  */
 public class MergerSort {
 
@@ -66,6 +74,7 @@ public class MergerSort {
         int j = 0; //workSpace的下标指针
         int n = upperBound-lowerBound+1;  //归并的元素总数
 
+        //比较两个数组  归并排序开始
         while(lowBegin<=lowEnd && highBegin<=highEnd){
             if(array[lowBegin]<array[highBegin]){//将两者较小的那个放到workSpace中
                 workSpace[j++]= array[lowBegin++];
@@ -74,6 +83,7 @@ public class MergerSort {
             }
         }
 
+        //结束  如果还有剩余
         while(lowBegin<=lowEnd){
             workSpace[j++]= array[lowBegin++];
         }

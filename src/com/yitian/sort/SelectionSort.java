@@ -4,6 +4,11 @@ package com.yitian.sort;
  * @author yitianRen
  * @date 2019-01-28
  * @description   选择排序是选择数组的最大值和最小值
+ *
+ * 基本思想
+ * 在要排序的一组数中，选出最小（或者最大）的一个数与第1个位置的数交换；然后在剩下的数当中再找最小
+ *              （或者最大）的与第2个位置的数交换，
+ *              依次类推，直到第n-1个元素（倒数第二个数）和第n个元素（最后一个数）比较为止。
  */
 public class SelectionSort {
     private  int[] array;
